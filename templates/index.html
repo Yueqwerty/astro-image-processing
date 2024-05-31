@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astronomical Image Processing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <h1>Upload an Astronomical Image</h1>
@@ -11,5 +12,8 @@
         <input type="file" name="file" accept="image/*">
         <button type="submit">Upload</button>
     </form>
+    <h2>Processed Images</h2>
+    <div id="results"></div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
