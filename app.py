@@ -8,7 +8,9 @@ app = Flask(__name__)
 # Configuración de rutas
 DATA_FILE = 'data/data.json'
 IMAGE_FOLDER = 'data/images'
+PROCESSED_IMAGE_FOLDER = 'data/processed_images'
 os.makedirs(IMAGE_FOLDER, exist_ok=True)
+os.makedirs(PROCESSED_IMAGE_FOLDER, exist_ok=True)
 
 @app.route('/')
 def index():
