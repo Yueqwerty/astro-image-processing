@@ -6,6 +6,7 @@ import uuid
 
 app = Flask(__name__)
 
+# Configuración de rutas
 DATA_FILE = 'data/data.json'
 IMAGE_FOLDER = 'data/images'
 PROCESSED_IMAGE_FOLDER = 'data/processed_images'
@@ -24,12 +25,15 @@ def process_image():
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
     if file:
+        # Guardar imagen
         filename = str(uuid.uuid4()) + os.path.splitext(file.filename)[1]
         filepath = os.path.join(IMAGE_FOLDER, filename)
         file.save(filepath)
         
+        # Procesar imagen
         result = process_astronomical_image(filepath)
         
+        # Guardar resultados en persistencia
         data = load_data(DATA_FILE)
         new_entry = {
             'id': len(data),
