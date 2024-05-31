@@ -2,10 +2,10 @@ from flask import Flask, request, jsonify, render_template
 from utils.image_processing import process_astronomical_image
 from utils.persistence import load_data, save_data, get_data_by_id, update_data_by_id, delete_data_by_id
 import os
+import uuid
 
 app = Flask(__name__)
 
-# Configuración de rutas
 DATA_FILE = 'data/data.json'
 IMAGE_FOLDER = 'data/images'
 PROCESSED_IMAGE_FOLDER = 'data/processed_images'
@@ -24,18 +24,16 @@ def process_image():
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
     if file:
-        # Guardar imagen
-        filepath = os.path.join(IMAGE_FOLDER, file.filename)
+        filename = str(uuid.uuid4()) + os.path.splitext(file.filename)[1]
+        filepath = os.path.join(IMAGE_FOLDER, filename)
         file.save(filepath)
         
-        # Procesar imagen
         result = process_astronomical_image(filepath)
         
-        # Guardar resultados en persistencia dummy
         data = load_data(DATA_FILE)
         new_entry = {
             'id': len(data),
-            'filename': file.filename,
+            'filename': filename,
             'result': result
         }
         data.append(new_entry)
