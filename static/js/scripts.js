@@ -8,5 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 img.src = '/' + item.result.processed;
                 resultsDiv.appendChild(img);
             });
-        });
+        })
+        .catch(error => console.error('Error fetching data:', error));
 });
