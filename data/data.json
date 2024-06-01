@@ -37,5 +37,110 @@
             "original": "data/images\\9d693f2d-5a80-4885-9553-4c1960d040c4.jpg",
             "processed": "data/processed_images\\9d693f2d-5a80-4885-9553-4c1960d040c4.jpg"
         }
+    },
+    {
+        "id": 4,
+        "filename": "5115329c-f64b-41aa-82bf-607b9f98793b.jpg",
+        "result": {
+            "original": "data/images\\5115329c-f64b-41aa-82bf-607b9f98793b.jpg",
+            "processed": "data/processed_images\\5115329c-f64b-41aa-82bf-607b9f98793b.jpg"
+        },
+        "galaxy_type": "Elliptical"
+    },
+    {
+        "id": 5,
+        "filename": "3da46d5b-d935-4281-a657-f51dd5610391.jpg",
+        "result": {
+            "original": "data/images\\3da46d5b-d935-4281-a657-f51dd5610391.jpg",
+            "processed": "data/processed_images\\3da46d5b-d935-4281-a657-f51dd5610391.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 6,
+        "filename": "2c956536-a9b1-486a-be47-9d11153d344d.jpg",
+        "result": {
+            "original": "data/images\\2c956536-a9b1-486a-be47-9d11153d344d.jpg",
+            "processed": "data/processed_images\\2c956536-a9b1-486a-be47-9d11153d344d.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 7,
+        "filename": "1b525190-aca0-480b-85f3-5742fa3e5c8b.jpg",
+        "result": {
+            "original": "data/images\\1b525190-aca0-480b-85f3-5742fa3e5c8b.jpg",
+            "processed": "data/processed_images\\1b525190-aca0-480b-85f3-5742fa3e5c8b.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 8,
+        "filename": "be93a400-84ce-4080-9cb3-7460709d899a.jpg",
+        "result": {
+            "original": "data/images\\be93a400-84ce-4080-9cb3-7460709d899a.jpg",
+            "processed": "data/processed_images\\be93a400-84ce-4080-9cb3-7460709d899a.jpg"
+        }
+    },
+    {
+        "id": 9,
+        "filename": "abca1b87-e641-49e8-b609-dcf3c3c304b0.jpg",
+        "result": {
+            "original": "data/images\\abca1b87-e641-49e8-b609-dcf3c3c304b0.jpg",
+            "processed": "data/processed_images\\abca1b87-e641-49e8-b609-dcf3c3c304b0.jpg"
+        }
+    },
+    {
+        "id": 10,
+        "filename": "57c62d11-9b62-4b89-8d9f-1bbb52c6d049.jpg",
+        "result": {
+            "original": "data/images\\57c62d11-9b62-4b89-8d9f-1bbb52c6d049.jpg",
+            "processed": "data/processed_images\\57c62d11-9b62-4b89-8d9f-1bbb52c6d049.jpg"
+        }
+    },
+    {
+        "id": 11,
+        "filename": "20819dec-1062-47ea-9b94-152cd59fb1ce.jpg",
+        "result": {
+            "original": "data/images\\20819dec-1062-47ea-9b94-152cd59fb1ce.jpg",
+            "processed": "data/processed_images\\20819dec-1062-47ea-9b94-152cd59fb1ce.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 12,
+        "filename": "05f18449-c351-49db-865d-fa54c7b28097.jpg",
+        "result": {
+            "original": "data/images\\05f18449-c351-49db-865d-fa54c7b28097.jpg",
+            "processed": "data/processed_images\\05f18449-c351-49db-865d-fa54c7b28097.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 13,
+        "filename": "61aa1cbe-6948-4da8-9904-eefb8c71f5ce.jpg",
+        "result": {
+            "original": "data/images\\61aa1cbe-6948-4da8-9904-eefb8c71f5ce.jpg",
+            "processed": "data/processed_images\\61aa1cbe-6948-4da8-9904-eefb8c71f5ce.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 14,
+        "filename": "11c21334-6a00-440c-bd06-0d93d4068554.jpg",
+        "result": {
+            "original": "data/images\\11c21334-6a00-440c-bd06-0d93d4068554.jpg",
+            "processed": "data/processed_images\\11c21334-6a00-440c-bd06-0d93d4068554.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 15,
+        "filename": "89ce627b-bf27-4578-8dc4-8e33ebec9fbd.jpg",
+        "result": {
+            "original": "data/images\\89ce627b-bf27-4578-8dc4-8e33ebec9fbd.jpg",
+            "processed": "data/processed_images\\89ce627b-bf27-4578-8dc4-8e33ebec9fbd.jpg"
+        },
+        "galaxy_type": "Spiral"
     }
 ]

@@ -2,39 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procesamiento de Imágenes Astronómicas</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Astronomical Image Processing</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Procesamiento de Imágenes Astronómicas</h1>
-        <form id="upload-form" action="/process_image" method="post" enctype="multipart/form-data">
-            <input type="file" id="file-input" name="file" accept="image/*">
-            <label for="file-input">Seleccionar Imagen</label>
-            <button type="submit">Subir Imagen</button>
-        </form>
-        <div id="preview"></div>
-        <div id="results"></div>
-    </div>
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    <script>
-        const fileInput = document.getElementById('file-input');
-        const preview = document.getElementById('preview');
+    <h1>Upload Astronomical Image</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" id="fileInput">
+        <button type="submit">Upload</button>
+    </form>
+    <div id="result"></div>
 
-        fileInput.addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-
-            reader.onload = function(event) {
-                const img = document.createElement('img');
-                img.src = event.target.result;
-                preview.innerHTML = '';
-                preview.appendChild(img);
-            };
-
-            reader.readAsDataURL(file);
-        });
-    </script>
+    <script src="/static/js/scripts.js"></script>
 </body>
 </html>
