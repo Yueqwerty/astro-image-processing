@@ -27,5 +27,15 @@
             "galaxies_detected": 0,
             "galaxy_types": []
         }
+    },
+    {
+        "id": 3,
+        "filename": "9d693f2d-5a80-4885-9553-4c1960d040c4.jpg",
+        "result": {
+            "galaxies_detected": 0,
+            "galaxy_types": [],
+            "original": "data/images\\9d693f2d-5a80-4885-9553-4c1960d040c4.jpg",
+            "processed": "data/processed_images\\9d693f2d-5a80-4885-9553-4c1960d040c4.jpg"
+        }
     }
 ]
