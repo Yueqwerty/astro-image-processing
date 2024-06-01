@@ -1,1 +1,31 @@
-"[]" 
+[
+    {
+        "id": 0,
+        "filename": "819bf72c-caaa-4b6b-9ad9-6c9fffe0d7da.jpg",
+        "result": {
+            "original": "data/images\\819bf72c-caaa-4b6b-9ad9-6c9fffe0d7da.jpg",
+            "processed": "data/processed_images\\819bf72c-caaa-4b6b-9ad9-6c9fffe0d7da.jpg",
+            "galaxies_detected": 2
+        }
+    },
+    {
+        "id": 1,
+        "filename": "90a092bf-2209-44cf-871a-a4fa2001cec1.jpg",
+        "result": {
+            "original": "data/images\\90a092bf-2209-44cf-871a-a4fa2001cec1.jpg",
+            "processed": "data/processed_images\\90a092bf-2209-44cf-871a-a4fa2001cec1.jpg",
+            "galaxies_detected": 0,
+            "galaxy_types": []
+        }
+    },
+    {
+        "id": 2,
+        "filename": "74111504-4d4a-4b5e-a2d7-d746af17c34f.jpg",
+        "result": {
+            "original": "data/images\\74111504-4d4a-4b5e-a2d7-d746af17c34f.jpg",
+            "processed": "data/processed_images\\74111504-4d4a-4b5e-a2d7-d746af17c34f.jpg",
+            "galaxies_detected": 0,
+            "galaxy_types": []
+        }
+    }
+]

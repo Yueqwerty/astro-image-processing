@@ -25,8 +25,8 @@ def process_image():
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
     if file:
-        # Guardar imagen
-        filename = str(uuid.uuid4()) + os.path.splitext(file.filename)[1]
+        # Guardar imagen con un nombre único para evitar colisiones
+        filename = f"{uuid.uuid4()}.jpg"
         filepath = os.path.join(IMAGE_FOLDER, filename)
         file.save(filepath)
         

@@ -6,7 +6,10 @@ def load_data(file_path):
         return []
     with open(file_path, 'r') as file:
         try:
-            return json.load(file)
+            data = json.load(file)
+            if not isinstance(data, list):
+                return []
+            return data
         except json.JSONDecodeError:
             return []
 
