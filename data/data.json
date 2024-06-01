@@ -142,5 +142,41 @@
             "processed": "data/processed_images\\89ce627b-bf27-4578-8dc4-8e33ebec9fbd.jpg"
         },
         "galaxy_type": "Spiral"
+    },
+    {
+        "id": 16,
+        "filename": "29458274-1c9c-4b9a-8353-04948b85b0a5.jpg",
+        "result": {
+            "original": "data/images\\29458274-1c9c-4b9a-8353-04948b85b0a5.jpg",
+            "processed": "data/processed_images\\29458274-1c9c-4b9a-8353-04948b85b0a5.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 17,
+        "filename": "fcf34096-d60a-42ac-a8f4-752d681d7ef4.jpg",
+        "result": {
+            "original": "data/images\\fcf34096-d60a-42ac-a8f4-752d681d7ef4.jpg",
+            "processed": "data/processed_images\\fcf34096-d60a-42ac-a8f4-752d681d7ef4.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 18,
+        "filename": "2d828d23-b74b-4265-aacc-810449d82ea5.jpg",
+        "result": {
+            "original": "data/images\\2d828d23-b74b-4265-aacc-810449d82ea5.jpg",
+            "processed": "data/processed_images\\2d828d23-b74b-4265-aacc-810449d82ea5.jpg"
+        },
+        "galaxy_type": "Spiral"
+    },
+    {
+        "id": 19,
+        "filename": "2dbece48-528d-44b0-b6db-14e7ee710052.jpg",
+        "result": {
+            "original": "data/images\\2dbece48-528d-44b0-b6db-14e7ee710052.jpg",
+            "processed": "data/processed_images\\2dbece48-528d-44b0-b6db-14e7ee710052.jpg"
+        },
+        "galaxy_type": "Spiral"
     }
 ]
