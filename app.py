@@ -1,8 +1,9 @@
 import os
 import uuid
-import json
 from flask import Flask, request, jsonify, render_template, send_from_directory
+import cv2
 from astro_utils.image_processing import process_astronomical_image, classify_galaxy
+import json
 
 app = Flask(__name__)
 
@@ -26,7 +27,7 @@ def save_data(filepath, data):
 def index():
     return render_template('index.html')
 
-@app.route('/process_image', methods=['POST'])
+@app.route('/processed_images', methods=['POST'])
 def process_image():
     if 'file' not in request.files:
         return jsonify({'error': 'No file part'}), 400
@@ -39,14 +40,15 @@ def process_image():
         file.save(filepath)
         
         result = process_astronomical_image(filepath)
-        galaxy_type = classify_galaxy(filepath)
-        
+        classification = classify_galaxy(filepath)
         data = load_data(DATA_FILE)
         new_entry = {
             'id': len(data),
             'filename': filename,
-            'result': result,
-            'galaxy_type': galaxy_type
+            'result': {
+                'processed': result['processed'],
+                'classification': classification
+            }
         }
         data.append(new_entry)
         save_data(DATA_FILE, data)
@@ -96,12 +98,12 @@ def delete_data(id):
         return jsonify(entry), 200
     return jsonify({'error': 'Data not found'}), 404
 
-@app.route('/data/images/<filename>')
-def get_image(filename):
+@app.route('/uploads/<filename>')
+def send_file(filename):
     return send_from_directory(IMAGE_FOLDER, filename)
 
-@app.route('/data/processed_images/<filename>')
-def get_processed_image(filename):
+@app.route('/processed/<filename>')
+def send_processed_file(filename):
     return send_from_directory(PROCESSED_IMAGE_FOLDER, filename)
 
 if __name__ == '__main__':
