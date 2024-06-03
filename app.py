@@ -2,7 +2,10 @@ import os
 import uuid
 from flask import Flask, request, jsonify, render_template, send_from_directory
 import cv2
-from astro_utils.image_processing import process_astronomical_image, classify_galaxy
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import load_model
+from astro_utils.image_processing import process_astronomical_image
 import json
 
 app = Flask(__name__)
@@ -12,6 +15,9 @@ IMAGE_FOLDER = 'data/images'
 PROCESSED_IMAGE_FOLDER = 'data/processed_images'
 os.makedirs(IMAGE_FOLDER, exist_ok=True)
 os.makedirs(PROCESSED_IMAGE_FOLDER, exist_ok=True)
+
+model = load_model('galaxy_classifier.h5')
+class_names = ['Spiral', 'Elliptical', 'Irregular']
 
 def load_data(filepath):
     if os.path.exists(filepath):
@@ -23,11 +29,19 @@ def save_data(filepath, data):
     with open(filepath, 'w') as file:
         json.dump(data, file, indent=4)
 
+def classify_galaxy(image_path):
+    img = cv2.imread(image_path)
+    img = cv2.resize(img, (150, 150))
+    img = np.expand_dims(img, axis=0) / 255.0
+    predictions = model.predict(img)
+    class_idx = np.argmax(predictions, axis=1)[0]
+    return class_names[class_idx]
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/processed_images', methods=['POST'])
+@app.route('/process_image', methods=['POST'])
 def process_image():
     if 'file' not in request.files:
         return jsonify({'error': 'No file part'}), 400

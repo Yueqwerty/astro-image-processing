@@ -228,5 +228,37 @@
             "processed": "data/processed_images\\3b4df412-cb3a-42ac-8858-37db307babf5.jpg",
             "classification": "Elliptical"
         }
+    },
+    {
+        "id": 26,
+        "filename": "c0f618a1-b8dc-4b1d-90ad-4494c2f9d35e.jpg",
+        "result": {
+            "processed": "c0f618a1-b8dc-4b1d-90ad-4494c2f9d35e.jpg",
+            "classification": "Spiral"
+        }
+    },
+    {
+        "id": 27,
+        "filename": "948affa0-d2b7-41f9-ae9f-ac188ab73fd3.jpg",
+        "result": {
+            "processed": "948affa0-d2b7-41f9-ae9f-ac188ab73fd3.jpg",
+            "classification": "Spiral"
+        }
+    },
+    {
+        "id": 28,
+        "filename": "5752fe56-7349-423d-a34f-3336b9008aef.jpg",
+        "result": {
+            "processed": "5752fe56-7349-423d-a34f-3336b9008aef.jpg",
+            "classification": "Spiral"
+        }
+    },
+    {
+        "id": 29,
+        "filename": "f1385ee2-64b4-43fa-a3c7-ff0f40a3d2d6.jpg",
+        "result": {
+            "processed": "f1385ee2-64b4-43fa-a3c7-ff0f40a3d2d6.jpg",
+            "classification": "Elliptical"
+        }
     }
 ]
