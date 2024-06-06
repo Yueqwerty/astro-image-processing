@@ -1,65 +1,36 @@
-# -*- coding: utf-8 -*-
+import cv2
 import os
-import tensorflow as tf
-import keras
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
+import numpy as np
 
-training_data_dir = 'data/training_data'
-model_save_path = 'models/galaxy_classifier.h5'
+def process_astronomical_image(image_path):
+    img = cv2.imread(image_path)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    
+    edges = cv2.Canny(gray, 100, 200)
+    
+    edges_colored = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
+    edges_colored[np.where((edges_colored == [255, 255, 255]).all(axis=2))] = [0, 255, 0]
+    
+    processed_image_path = os.path.join('data/processed_images', os.path.basename(image_path))
+    cv2.imwrite(processed_image_path, edges_colored)
+    
+    return {
+        'original': image_path,
+        'processed': processed_image_path
+    }
 
-img_height, img_width = 150, 150
-batch_size = 32
-epochs = 25
-
-train_datagen = ImageDataGenerator(
-    rescale=1./255,
-    rotation_range=40,
-    width_shift_range=0.2,
-    height_shift_range=0.2,
-    shear_range=0.2,
-    zoom_range=0.2,
-    horizontal_flip=True,
-    fill_mode='nearest',
-    validation_split=0.2
-)
-
-train_generator = train_datagen.flow_from_directory(
-    training_data_dir,
-    target_size=(img_height, img_width),
-    batch_size=batch_size,
-    class_mode='categorical',
-    subset='training'
-)
-
-validation_generator = train_datagen.flow_from_directory(
-    training_data_dir,
-    target_size=(img_height, img_width),
-    batch_size=batch_size,
-    class_mode='categorical',
-    subset='validation'
-)
-
-model = Sequential([
-    Conv2D(32, (3, 3), activation='relu', input_shape=(img_height, img_width, 3)),
-    MaxPooling2D((2, 2)),
-    Conv2D(64, (3, 3), activation='relu'),
-    MaxPooling2D((2, 2)),
-    Conv2D(128, (3, 3), activation='relu'),
-    MaxPooling2D((2, 2)),
-    Flatten(),
-    Dense(512, activation='relu'),
-    Dropout(0.5),
-    Dense(3, activation='softmax')
-])
-
-model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-
-model.fit(
-    train_generator,
-    epochs=epochs,
-    validation_data=validation_generator
-)
-
-model.save(model_save_path)
+def classify_galaxy(image_path):
+    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    
+    blurred = cv2.GaussianBlur(img, (5, 5), 0)
+    
+    _, thresholded = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)
+    
+    contours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
+    if len(contours) > 100:
+        return "Spiral"
+    elif len(contours) > 50:
+        return "Elliptical"
+    else:
+        return "Irregular"

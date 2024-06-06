@@ -3,10 +3,8 @@ import uuid
 from flask import Flask, request, jsonify, render_template, send_from_directory
 import cv2
 import numpy as np
-import tensorflow as tf
-from tensorflow.keras.models import load_model
-from astro_utils.image_processing import process_astronomical_image
-import json
+from astro_utils.image_processing import process_astronomical_image, classify_galaxy
+from persistence import load_data, save_data, get_data_by_id, update_data_by_id, delete_data_by_id
 
 app = Flask(__name__)
 
@@ -15,27 +13,6 @@ IMAGE_FOLDER = 'data/images'
 PROCESSED_IMAGE_FOLDER = 'data/processed_images'
 os.makedirs(IMAGE_FOLDER, exist_ok=True)
 os.makedirs(PROCESSED_IMAGE_FOLDER, exist_ok=True)
-
-model = load_model('galaxy_classifier.h5')
-class_names = ['Spiral', 'Elliptical', 'Irregular']
-
-def load_data(filepath):
-    if os.path.exists(filepath):
-        with open(filepath, 'r') as file:
-            return json.load(file)
-    return []
-
-def save_data(filepath, data):
-    with open(filepath, 'w') as file:
-        json.dump(data, file, indent=4)
-
-def classify_galaxy(image_path):
-    img = cv2.imread(image_path)
-    img = cv2.resize(img, (150, 150))
-    img = np.expand_dims(img, axis=0) / 255.0
-    predictions = model.predict(img)
-    class_idx = np.argmax(predictions, axis=1)[0]
-    return class_names[class_idx]
 
 @app.route('/')
 def index():
@@ -76,8 +53,7 @@ def get_data():
 
 @app.route('/data/<int:id>', methods=['GET'])
 def get_data_by_id_route(id):
-    data = load_data(DATA_FILE)
-    entry = next((item for item in data if item['id'] == id), None)
+    entry = get_data_by_id(DATA_FILE, id)
     if entry:
         return jsonify(entry), 200
     return jsonify({'error': 'Data not found'}), 404
@@ -92,24 +68,18 @@ def add_data():
     return jsonify(new_data), 201
 
 @app.route('/data/<int:id>', methods=['PUT'])
-def update_data(id):
+def update_data_route(id):
     updated_data = request.json
-    data = load_data(DATA_FILE)
-    entry = next((item for item in data if item['id'] == id), None)
-    if entry:
-        entry.update(updated_data)
-        save_data(DATA_FILE, data)
-        return jsonify(entry), 200
+    updated_entry = update_data_by_id(DATA_FILE, id, updated_data)
+    if updated_entry:
+        return jsonify(updated_entry), 200
     return jsonify({'error': 'Data not found'}), 404
 
 @app.route('/data/<int:id>', methods=['DELETE'])
-def delete_data(id):
-    data = load_data(DATA_FILE)
-    entry = next((item for item in data if item['id'] == id), None)
-    if entry:
-        data.remove(entry)
-        save_data(DATA_FILE, data)
-        return jsonify(entry), 200
+def delete_data_route(id):
+    deleted_entry = delete_data_by_id(DATA_FILE, id)
+    if deleted_entry:
+        return jsonify(deleted_entry), 200
     return jsonify({'error': 'Data not found'}), 404
 
 @app.route('/uploads/<filename>')

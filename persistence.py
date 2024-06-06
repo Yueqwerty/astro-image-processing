@@ -1,6 +1,5 @@
 import json
 import os
-import utils
 
 def load_data(file_path):
     if not os.path.exists(file_path) or os.path.getsize(file_path) == 0:
