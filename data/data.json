@@ -292,5 +292,117 @@
             "processed": "data/processed_images\\93da5d5f-e386-49ba-987e-a1f143ca3187.jpg",
             "classification": "Spiral"
         }
+    },
+    {
+        "id": 34,
+        "filename": "d15c02cc-fc87-4f6f-aa1b-411c8c2504e9.jpg",
+        "result": {
+            "processed": "data/processed_images\\d15c02cc-fc87-4f6f-aa1b-411c8c2504e9.jpg",
+            "classification": "Elliptical"
+        }
+    },
+    {
+        "id": 35,
+        "filename": "dc9a2cc7-7b19-47d9-a6ee-822decf2c197.jpg",
+        "result": {
+            "processed": "dc9a2cc7-7b19-47d9-a6ee-822decf2c197.jpg",
+            "classification": "Spiral"
+        }
+    },
+    {
+        "id": 36,
+        "filename": "dcf7ee03-42c7-404d-8963-7ca7a05e3375.jpg",
+        "result": {
+            "processed": "dcf7ee03-42c7-404d-8963-7ca7a05e3375.jpg",
+            "classification": "Irregular"
+        }
+    },
+    {
+        "id": 37,
+        "filename": "8c4aded9-4d36-4115-97b1-cbda457765dd.jpg",
+        "result": {
+            "processed": "8c4aded9-4d36-4115-97b1-cbda457765dd.jpg",
+            "classification": "Irregular"
+        }
+    },
+    {
+        "id": 38,
+        "filename": "49276c6a-df1a-4405-875b-817f448d8eb7.jpg",
+        "result": {
+            "processed": "49276c6a-df1a-4405-875b-817f448d8eb7.jpg",
+            "classification": "Irregular"
+        }
+    },
+    {
+        "id": 39,
+        "filename": "bda765e9-723b-4149-b6bd-145ea0c83399.jpg",
+        "result": {
+            "processed": "bda765e9-723b-4149-b6bd-145ea0c83399.jpg",
+            "classification": "Irregular"
+        }
+    },
+    {
+        "id": 40,
+        "filename": "0a2bf055-5da3-4235-814f-c18fb53a33c8.jpg",
+        "result": {
+            "processed": "0a2bf055-5da3-4235-814f-c18fb53a33c8.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 41,
+        "filename": "d5590399-f5c2-4856-b3bc-4465f88f0edb.jpg",
+        "result": {
+            "processed": "d5590399-f5c2-4856-b3bc-4465f88f0edb.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 42,
+        "filename": "716e9e49-8ce0-4388-9b06-d527a105732d.jpg",
+        "result": {
+            "processed": "716e9e49-8ce0-4388-9b06-d527a105732d.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 43,
+        "filename": "b8a3526d-93d0-4886-8a55-60c09116e8a4.jpg",
+        "result": {
+            "processed": "b8a3526d-93d0-4886-8a55-60c09116e8a4.jpg",
+            "classification": "Irregular"
+        }
+    },
+    {
+        "id": 44,
+        "filename": "ff7d855c-8021-453e-a501-0005239393e5.jpg",
+        "result": {
+            "processed": "ff7d855c-8021-453e-a501-0005239393e5.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 45,
+        "filename": "29cc6c1c-7f18-42be-90e0-045cb089d598.jpg",
+        "result": {
+            "processed": "29cc6c1c-7f18-42be-90e0-045cb089d598.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 46,
+        "filename": "0868ce98-ca07-4f7d-a747-def2fa3c7bde.jpg",
+        "result": {
+            "processed": "0868ce98-ca07-4f7d-a747-def2fa3c7bde.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 47,
+        "filename": "56f50f03-8adf-450b-860c-2506a50894a3.jpg",
+        "result": {
+            "processed": "56f50f03-8adf-450b-860c-2506a50894a3.jpg",
+            "classification": "Espiral"
+        }
     }
 ]

@@ -1,8 +1,6 @@
 import os
 import uuid
 from flask import Flask, request, jsonify, render_template, send_from_directory
-import cv2
-import numpy as np
 from astro_utils.image_processing import process_astronomical_image, classify_galaxy
 from persistence import load_data, save_data, get_data_by_id, update_data_by_id, delete_data_by_id
 
@@ -31,7 +29,7 @@ def process_image():
         file.save(filepath)
         
         result = process_astronomical_image(filepath)
-        classification = classify_galaxy(filepath)
+        classification = classify_galaxy(result['processed'])
         data = load_data(DATA_FILE)
         new_entry = {
             'id': len(data),
