@@ -3,8 +3,11 @@ import uuid
 from flask import Flask, request, jsonify, render_template, send_from_directory
 from astro_utils.image_processing import process_astronomical_image, classify_galaxy
 from persistence import load_data, save_data, get_data_by_id, update_data_by_id, delete_data_by_id
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 
 DATA_FILE = 'data/data.json'
 IMAGE_FOLDER = 'data/images'

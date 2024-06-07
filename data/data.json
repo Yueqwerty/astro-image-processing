@@ -404,5 +404,69 @@
             "processed": "56f50f03-8adf-450b-860c-2506a50894a3.jpg",
             "classification": "Espiral"
         }
+    },
+    {
+        "id": 48,
+        "filename": "f82d04bf-b250-4b09-adf6-8adc454115c0.jpg",
+        "result": {
+            "processed": "f82d04bf-b250-4b09-adf6-8adc454115c0.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 49,
+        "filename": "e7e20ae5-32af-423d-8b5d-95d317decf89.jpg",
+        "result": {
+            "processed": "e7e20ae5-32af-423d-8b5d-95d317decf89.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 50,
+        "filename": "48e1a405-ce04-4c38-8d04-91bf85bb19d6.jpg",
+        "result": {
+            "processed": "48e1a405-ce04-4c38-8d04-91bf85bb19d6.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 51,
+        "filename": "908b5adb-2bea-4204-ae71-0a7f2139845a.jpg",
+        "result": {
+            "processed": "908b5adb-2bea-4204-ae71-0a7f2139845a.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 52,
+        "filename": "6b3ec960-7621-4364-bf1e-02c7c575e1e7.jpg",
+        "result": {
+            "processed": "6b3ec960-7621-4364-bf1e-02c7c575e1e7.jpg",
+            "classification": "Espiral"
+        }
+    },
+    {
+        "id": 53,
+        "filename": "d472e820-5002-49e4-815a-c884a6126cf6.jpg",
+        "result": {
+            "processed": "d472e820-5002-49e4-815a-c884a6126cf6.jpg",
+            "classification": "Irregular"
+        }
+    },
+    {
+        "id": 54,
+        "filename": "f57fbba7-7cdd-42f4-ac9d-21a6e9441ec6.jpg",
+        "result": {
+            "processed": "f57fbba7-7cdd-42f4-ac9d-21a6e9441ec6.jpg",
+            "classification": "Irregular"
+        }
+    },
+    {
+        "id": 55,
+        "filename": "59db98c9-576b-4fea-ac74-45f168168304.jpg",
+        "result": {
+            "processed": "59db98c9-576b-4fea-ac74-45f168168304.jpg",
+            "classification": "Espiral"
+        }
     }
 ]
