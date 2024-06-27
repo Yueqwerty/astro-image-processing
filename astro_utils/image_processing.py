@@ -23,11 +23,11 @@ def process_astronomical_image(image_path):
     
     return {
         'original': image_path,
-        'processed': os.path.basename(processed_image_path)
+        'processed': processed_image_path
     }
 
 def classify_galaxy(processed_image_filename):
-    processed_image_path = os.path.join('data/processed_images', processed_image_filename)
+    processed_image_path = processed_image_filename
     img = cv2.imread(processed_image_path)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 

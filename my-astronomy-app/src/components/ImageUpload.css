@@ -1,73 +1,116 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #000000; 
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.navbar h1 {
+    color: #6a0dad;
     margin: 0;
-    padding: 0;
-    color: #ffffff; 
 }
 
 .app-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
     padding: 20px;
 }
 
 .upload-card {
-    background: #1a1a1a; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    padding: 30px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    max-width: 900px;
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-h1 {
-    color: #b300b3; 
-    margin-bottom: 30px;
-}
-
-.upload-button, input[type="file"] {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 5px;
-    border: none;
-    background-color: #800080; 
+.upload-button,
+.delete-button,
+.download-button {
+    background-color: #6a0dad;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin: 10px 5px;
 }
 
-.upload-button:hover, input[type="file"]:hover {
-    background-color: #4b0082;
+.upload-button:hover,
+.delete-button:hover,
+.download-button:hover {
+    background-color: #5a009d;
 }
 
-.image-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-top: 30px;
-    width: 100%;
+.filter-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .image-box {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
     text-align: center;
-    margin: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-img {
-    width: 100%;
+.image-box img {
+    max-width: 100%;
     height: auto;
-    border-radius: 12px;
-    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-p {
-    font-size: 14px;
-    color: #cccccc;
+.statistics {
+    margin-top: 20px;
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.chart-container {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.notification {
+    background-color: #6a0dad;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.footer p {
+    color: #ffffff;
+    margin: 0;
 }
