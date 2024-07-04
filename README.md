@@ -10,8 +10,6 @@ Este proyecto implica la construcción de una aplicación web que procesa imáge
 - [Uso](#uso)
 - [Endpoints de la API](#endpoints-de-la-api)
 - [Estructura de Archivos](#estructura-de-archivos)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
 
 ## Características
 
