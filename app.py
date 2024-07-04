@@ -49,11 +49,9 @@ def process_images():
         result = process_astronomical_image(file_path)
         classification = classify_galaxy(result['processed'])
         
-        # Mover la imagen procesada a la carpeta correspondiente
         training_image_path = os.path.join(TRAINING_IMAGES_FOLDER, classification, os.path.basename(result['processed']))
         os.rename(result['processed'], training_image_path)
         
-        # Guardar la imagen procesada en MongoDB
         with open(training_image_path, 'rb') as img_file:
             processed_file_id = fs.put(img_file, filename=f"processed_{filename}")
         
