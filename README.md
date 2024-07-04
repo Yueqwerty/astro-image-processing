@@ -44,10 +44,12 @@ Este proyecto implica la construcción de una aplicación web que procesa imáge
    cd astro-image-processing
 
 2. Configura el backend.
+   ```bash
    cd backend
    pip install -r requirements.txt
 
 3. Configura el frontend.
+   ```bash
    cd frontend
    npm install
 
