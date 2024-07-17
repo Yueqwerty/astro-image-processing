@@ -53,4 +53,10 @@ Este proyecto implica la construcción de una aplicación web que procesa imáge
 
 4. Iniciar MongoDB localmente.
 
+## Ejecutar la aplicación
 
+1. Backend:
+   python app.py
+
+2. Frontend:
+  npm start
