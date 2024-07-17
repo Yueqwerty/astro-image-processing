@@ -165,32 +165,6 @@ Ejemplo de uso en Postman:
 2. Usar la URL: http://localhost:5000/image/<nombre_del_archivo>.
 3. Enviar la solicitud.
 
-## Estructura de Archivos
-
-astro-image-processing/
-│
-├── app.py
-├── requirements.txt
-├── data/
-│   ├── images/
-│   ├── processed_images/
-│   └── training_images/
-│       ├── Espiral/
-│       ├── Eliptica/
-│       └── Irregular/
-├── astro_utils/
-│   └── image_processing.py
-└── my-astronomy-app/
-    ├── public/
-    ├── src/
-    │   ├── components/
-    │   │   └── ImageUpload.js
-    │   ├── App.js
-    │   ├── index.js
-    │   └── ImageUpload.css
-    ├── package.json
-    └── package-lock.json
-
 ## Documentación del Código
 
 ### Backend
