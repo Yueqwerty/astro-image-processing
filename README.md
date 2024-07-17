@@ -4,12 +4,12 @@ Este proyecto implica la construcción de una aplicación web que procesa imáge
 
 ## Tabla de Contenidos
 
-- [Características](#características)
-- [Tecnologías](#tecnologías)
-- [Configuración](#configuración)
-- [Uso](#uso)
-- [Endpoints de la API](#endpoints-de-la-api)
-- [Estructura de Archivos](#estructura-de-archivos)
+- Características
+- Tecnologías
+- Configuración
+- Uso
+- Endpoints de la API
+- Estructura de Archivos
 
 ## Características
 
@@ -37,35 +37,31 @@ Este proyecto implica la construcción de una aplicación web que procesa imáge
 ### Instalación
 
 1. Clona el repositorio:
-   ```bash
    git clone https://github.com/tu_usuario/astro-image-processing.git
    cd astro-image-processing
 
-2. Configura el backend.
-   ```bash
-   cd backend
+2. Configura el backend:
+   python -m venv venv
+   source venv/bin/activate  # En Windows: venv\Scripts\activate
    pip install -r requirements.txt
 
-3. Configura el frontend.
-   ```bash
-   cd frontend
+3. Configura el frontend:
+   cd my-astronomy-app
    npm install
 
-4. Iniciar MongoDB localmente.
+4. Inicia MongoDB localmente.
 
-## Ejecutar la aplicación
+### Ejecutar la aplicación
 
 1. Backend:
-   ```bash
    python app.py
 
 2. Frontend:
-   ```bash
    npm start
 
 ## Uso
 
-### Carga de imágenes
+### Carga de Imágenes
 
 Permite subir múltiples imágenes para su procesamiento y clasificación. Las imágenes se procesan para detectar bordes y contornos, y se clasifican en tres categorías: 'Espiral', 'Elíptica' o 'Irregular'.
 
@@ -81,6 +77,158 @@ Permite eliminar imágenes y sus datos asociados de la base de datos.
 
 ### Subir imágenes
 
-- Endpoint: /process_images
-- Método: POST
-- Descripción: Permite subir múltiples imágenes para su procesamiento y clasificación.
+- **Endpoint:** /process_images
+- **Método:** POST
+- **Descripción:** Permite subir múltiples imágenes para su procesamiento y clasificación.
+
+Ejemplo de uso en Postman:
+1. Seleccionar el método POST.
+2. Usar la URL: http://localhost:5000/process_images.
+3. En la pestaña Body, seleccionar form-data.
+4. Añadir una llave files con tipo File y seleccionar las imágenes a subir.
+5. Enviar la solicitud.
+
+### Obtener datos de imágenes
+
+- **Endpoint:** /data
+- **Método:** GET
+- **Descripción:** Recupera la información de todas las imágenes procesadas.
+
+Ejemplo de uso en Postman:
+1. Seleccionar el método GET.
+2. Usar la URL: http://localhost:5000/data.
+3. Enviar la solicitud.
+
+### Obtener una imagen original
+
+- **Endpoint:** /uploads/<filename>
+- **Método:** GET
+- **Descripción:** Recupera la imagen original subida.
+
+Ejemplo de uso en Postman:
+1. Seleccionar el método GET.
+2. Usar la URL: http://localhost:5000/uploads/<nombre_del_archivo>.
+3. Enviar la solicitud.
+
+### Obtener una imagen procesada
+
+- **Endpoint:** /processed/<filename>
+- **Método:** GET
+- **Descripción:** Recupera la imagen procesada.
+
+Ejemplo de uso en Postman:
+1. Seleccionar el método GET.
+2. Usar la URL: http://localhost:5000/processed/<nombre_del_archivo_procesado>.
+3. Enviar la solicitud.
+
+### Eliminar datos de una imagen
+
+- **Endpoint:** /data/<filename>
+- **Método:** DELETE
+- **Descripción:** Elimina los datos de una imagen específica.
+
+Ejemplo de uso en Postman:
+1. Seleccionar el método DELETE.
+2. Usar la URL: http://localhost:5000/data/<nombre_del_archivo>.
+3. Enviar la solicitud.
+
+### Generar reporte de clasificación
+
+- **Endpoint:** /report
+- **Método:** GET
+- **Descripción:** Genera un reporte con la cantidad de imágenes por cada clasificación.
+
+Ejemplo de uso en Postman:
+1. Seleccionar el método GET.
+2. Usar la URL: http://localhost:5000/report.
+3. Enviar la solicitud.
+
+### Obtener estadísticas
+
+- **Endpoint:** /statistics
+- **Método:** GET
+- **Descripción:** Obtiene estadísticas generales de las imágenes clasificadas.
+
+Ejemplo de uso en Postman:
+1. Seleccionar el método GET.
+2. Usar la URL: http://localhost:5000/statistics.
+3. Enviar la solicitud.
+
+### Obtener detalles de una imagen
+
+- **Endpoint:** /image/<filename>
+- **Método:** GET
+- **Descripción:** Recupera los detalles de una imagen específica.
+
+Ejemplo de uso en Postman:
+1. Seleccionar el método GET.
+2. Usar la URL: http://localhost:5000/image/<nombre_del_archivo>.
+3. Enviar la solicitud.
+
+## Estructura de Archivos
+
+astro-image-processing/
+│
+├── app.py
+├── requirements.txt
+├── data/
+│   ├── images/
+│   ├── processed_images/
+│   └── training_images/
+│       ├── Espiral/
+│       ├── Eliptica/
+│       └── Irregular/
+├── astro_utils/
+│   └── image_processing.py
+└── my-astronomy-app/
+    ├── public/
+    ├── src/
+    │   ├── components/
+    │   │   └── ImageUpload.js
+    │   ├── App.js
+    │   ├── index.js
+    │   └── ImageUpload.css
+    ├── package.json
+    └── package-lock.json
+
+## Documentación del Código
+
+### Backend
+
+#### app.py
+
+Maneja las rutas y la lógica de procesamiento de imágenes y clasificación. Utiliza Flask como framework web y MongoDB para la persistencia de datos.
+
+- Configuración de MongoDB: Establece la conexión con la base de datos MongoDB y configura GridFS para almacenar las imágenes.
+- Rutas de carpetas: Define las rutas para almacenar las imágenes originales, procesadas y de entrenamiento.
+- Endpoints de la API: Define los endpoints para subir imágenes, obtener datos de imágenes, eliminar imágenes, generar reportes y obtener estadísticas.
+
+### Frontend
+
+#### src/components/ImageUpload.js
+
+Componente principal de React que maneja la carga, visualización y eliminación de imágenes, así como la visualización de estadísticas de clasificación.
+
+- **Carga de imágenes:** Permite la selección y subida de múltiples imágenes.
+- **Visualización de imágenes:** Muestra las imágenes originales y procesadas, junto con su clasificación.
+- **Eliminación de imágenes:** Permite eliminar imágenes y actualizar las estadísticas.
+- **Visualización de estadísticas:** Muestra estadísticas generales de las imágenes clasificadas utilizando Chart.js para gráficos.
+
+#### src/ImageUpload.css
+
+Define los estilos CSS para el componente ImageUpload, incluyendo la disposición de los elementos y la apariencia de los botones y las tarjetas de imagen.
+
+## Persistencia
+
+### MongoDB
+
+Se utiliza MongoDB para almacenar los datos de las imágenes y sus clasificaciones. GridFS se utiliza para almacenar las imágenes procesadas.
+
+- **images_collection:** Colección que almacena los metadatos de las imágenes, incluyendo el nombre del archivo original, el nombre del archivo procesado y la clasificación.
+- **fs.files y fs.chunks:** GridFS utiliza estas colecciones para almacenar las partes de los archivos de imagen procesados.
+
+### Configuración y uso
+
+- **Configurar MongoDB:** Asegúrate de que MongoDB esté corriendo en localhost:27017. La configuración de la conexión está en el archivo app.py.
+- **Insertar imágenes:** Las imágenes se insertan en MongoDB después de ser procesadas y clasificadas, junto con sus metadatos.
+- **Eliminar imágenes:** Las imágenes y sus datos asociados se eliminan de MongoDB cuando se llama al endpoint de eliminación.
