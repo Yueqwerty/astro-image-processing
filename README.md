@@ -206,3 +206,28 @@ Se utiliza MongoDB para almacenar los datos de las imágenes y sus clasificacion
 - **Configurar MongoDB:** Asegúrate de que MongoDB esté corriendo en localhost:27017. La configuración de la conexión está en el archivo app.py.
 - **Insertar imágenes:** Las imágenes se insertan en MongoDB después de ser procesadas y clasificadas, junto con sus metadatos.
 - **Eliminar imágenes:** Las imágenes y sus datos asociados se eliminan de MongoDB cuando se llama al endpoint de eliminación.
+
+astro-image-processing/
+│
+├── app.py
+├── requirements.txt
+├── data/
+│   ├── images/
+│   ├── processed_images/
+│   └── training_images/
+│       ├── Espiral/
+│       ├── Elíptica/
+│       └── Irregular/
+├── astro_utils/
+│   └── image_processing.py
+└── my-astronomy-app/
+    ├── public/
+    ├── src/
+    │   ├── components/
+    │   │   └── ImageUpload.js
+    │   ├── App.js
+    │   ├── index.js
+    │   └── ImageUpload.css
+    ├── package.json
+    └── package-lock.json
+
