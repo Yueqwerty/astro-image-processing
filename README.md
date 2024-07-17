@@ -77,7 +77,7 @@ Este proyecto implica la construcción de una aplicación web que procesa imáge
 
 6. **Ejecutar la aplicación React:**
    ```bash
-   cd ../frontend
+   cd ../my-astronomy-app
    npm start
    ```
 
