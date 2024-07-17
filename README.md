@@ -61,11 +61,26 @@ Este proyecto implica la construcción de una aplicación web que procesa imáge
 
 2. Frontend:
    ```bash
-  npm start
+   npm start
 
 ## Uso
 
 ### Carga de imágenes
 
 Permite subir múltiples imágenes para su procesamiento y clasificación. Las imágenes se procesan para detectar bordes y contornos, y se clasifican en tres categorías: 'Espiral', 'Elíptica' o 'Irregular'.
-  
+
+### Visualización de Resultados
+
+Muestra las imágenes cargadas y procesadas, junto con las estadísticas de clasificación. Permite filtrar las imágenes por su clasificación y descargar las imágenes procesadas.
+
+### Eliminación de Imágenes
+
+Permite eliminar imágenes y sus datos asociados de la base de datos.
+
+## Endpoints de la API
+
+### Subir imágenes
+
+- Endpoint: /process_images
+- Método: POST
+- Descripción: Permite subir múltiples imágenes para su procesamiento y clasificación.
