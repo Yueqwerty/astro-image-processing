@@ -56,7 +56,16 @@ Este proyecto implica la construcción de una aplicación web que procesa imáge
 ## Ejecutar la aplicación
 
 1. Backend:
+   ```bash
    python app.py
 
 2. Frontend:
+   ```bash
   npm start
+
+## Uso
+
+### Carga de imágenes
+
+Permite subir múltiples imágenes para su procesamiento y clasificación. Las imágenes se procesan para detectar bordes y contornos, y se clasifican en tres categorías: 'Espiral', 'Elíptica' o 'Irregular'.
+  
